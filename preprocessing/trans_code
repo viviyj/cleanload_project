@@ -1,0 +1,21 @@
+import pandas as pd
+import numpy as np
+
+# 교통량 데이터
+trans = pd.read_excel('trans7.xlsx') # 7월 교통량 데이터
+trans8 = pd.read_csv('trans8.csv') # 8월 교통량 데이터
+
+# 결측치를 채운 데이터를 총 지점명별 일합계 부분에 평균 값을 구한 데이터
+# 필요있는 열만 추출
+trans = trans[['지점명', '일합계']]
+
+# 지점명별 일 평균 구하기
+trans = trans.groupby(['지점명'], as_index=False).mean()
+
+# 일합계 이름 일평균으로 변경
+trans = trans.rename(columns={'일합계':'일평균'})
+
+# 모든 전처리를 완료한 7월, 8월 데이터를 합친 데이터 (7월, 8월)
+trans = pd.concat([trans, trans8])
+
+trans.to_excel('trans.xlsx')
