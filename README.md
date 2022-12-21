@@ -32,4 +32,6 @@ main branch의 preprocessing 패키지에 있는 people_code, trans_code를 실�
 
 
 ####5. 기타 특이사항
--
+##### 생활인구수 원본 데이터는 용량 문제로 업로드 불가하여 전처리 완료된 데이터만 preprocessing 패키지에 업로드하였음
+##### data 패키지의 데이터들 중 trans7.xlsx는 추가적인 전처리를 위한 데이터임
+##### data 패키지의 나머지 데이터들은 모두 전처리 이전의 원본 데이터임
